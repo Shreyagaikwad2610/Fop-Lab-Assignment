@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int choice, n, i;
+    float a, b, result=1;
+
+    printf("\n1. Addition");
+    printf("\n2. Subtraction");
+    printf("\n3. Multiplication");
+    printf("\n4. Division");
+    printf("\n5. Power (x^y)");
+    printf("\n6. Factorial (x!)");
+
+    printf("\nEnter your choice: ");
+    scanf("%d",&choice);
+
+    if(choice>=1 && choice<=5)
+    {
+        printf("Enter two numbers: ");
+        scanf("%f%f",&a,&b);
+    }
+
+    if(choice==1)
+        printf("Result = %.2f",a+b);
+
+    else if(choice==2)
+        printf("Result = %.2f",a-b);
+
+    else if(choice==3)
+        printf("Result = %.2f",a*b);
+
+    else if(choice==4)
+        printf("Result = %.2f",a/b);
+
+    else if(choice==5)
+        printf("Result = %.2f",pow(a,b));
+
+    else if(choice==6)
+    {
+        printf("Enter a number: ");
+        scanf("%d",&n);
+
+        for(i=1;i<=n;i++)
+            result=result*i;
+
+        printf("Factorial = %.0f",result);
+    }
+
+    else
+        printf("Invalid Choice");
+
+    return 0;
+}
