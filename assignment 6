@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+// Without Recursion
+int factorial1(int n)
+{
+    int i, fact=1;
+
+    for(i=1; i<=n; i++)
+    {
+        fact = fact * i;
+    }
+
+    return fact;
+}
+
+// With Recursion
+int factorial2(int n)
+{
+    if(n==0 || n==1)
+        return 1;
+    else
+        return n * factorial2(n-1);
+}
+
+int main()
+{
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d",&num);
+
+    printf("Factorial without recursion = %d\n", factorial1(num));
+
+    printf("Factorial with recursion = %d", factorial2(num));
+
+    return 0;
+}
